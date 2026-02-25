@@ -1,10 +1,10 @@
 body{
-    background-color: aquamarine;
+    background-color: rgb(42, 14, 6);
 }
 h1{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 60px;
-    color:blue;
+    color:rgb(136, 203, 177);
     font-style: italic;
     text-align: center; 
 }
@@ -12,7 +12,7 @@ form{
     width: 700px;
     margin: 30px;
     padding: 50px;
-    background-color: white;
+    background-color: rgb(56, 99, 98);
 }
 
 label{
@@ -22,7 +22,7 @@ label{
 }
 
 
-#PatientName, #Age{
+#StudentName, #StudenCGPA{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 20px;
     border: 20px solid gray;
