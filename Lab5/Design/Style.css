@@ -10,18 +10,49 @@ h3{
     font-size: 60px;
     color:black;
     font-style: bold;
-    text-align: center; 
+    
 }
 
 button {
     display: block;
     width: 150px;
-    margin: 20px;
+    margin: 20px auto;
     padding: 10px;
     background-color: black;
     color: white;
     border: none;
     border-radius: 5px;
 
+}
+
+
+.container{
+    width: 650px;
+    background-color: #eeeeee;
+    padding: 40px;
+    display: inline-block;   
+    text-align: left;        }
+
+
+table{
+    width: 100%;
+}
+
+td{
+    padding: 10px;
+}
+
+label{
+    font-size: 12px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, textarea{
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
