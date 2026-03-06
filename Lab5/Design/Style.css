@@ -1,58 +1,85 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
 body{
-    align-items: center;
-    font-family: Arial, sans-serif;
-    background-color: white;
-    text-align: center;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+background:hsl(0, 0%, 100%);
 }
 
-h3{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 60px;
-    color:black;
-    font-style: bold;
-    
-}
-
-button {
-    display: block;
-    width: 150px;
-    margin: 20px auto;
-    padding: 10px;
-    background-color: black;
-    color: white;
-    border: none;
-    border-radius: 5px;
-
+.form-box h2 {
+    text-align: left;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 
 .container{
-    width: 650px;
-    background-color: #eeeeee;
-    padding: 40px;
-    display: inline-block;   
-    text-align: left;        }
+background:#eeeeee;
+padding:20px;
+border-radius:10px;
 
+} 
+/* table */
 
 table{
-    width: 100%;
+width:100%;
+border-collapse:collapse;
 }
+
+/* table cells */
 
 td{
-    padding: 10px;
+padding:12px;
+width:50%;
 }
+
+/* labels */
 
 label{
-    font-size: 12px;
-    font-weight: bold;
-    display: block;
-    margin-bottom: 5px;
+font-size:12px;
+font-weight:bold;
+display:block;
+margin-bottom:6px;
 }
+
+/* inputs */
 
 input, textarea{
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+width:100%;
+padding:10px;
+border:1px solid #ccc;
+border-radius:4px;
+display:block;
 }
 
+/* textarea spacing */
+
+textarea{
+margin-top:5px;
+}
+
+/* button */
+
+.btn{
+text-align:center;
+}
+
+button{
+background:rgb(6, 34, 21);
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+color:white;
+border:none;
+padding:10px 30px;
+border-radius:6px;
+cursor:pointer;
+margin-top:10px;
+width: 200px;
+}
