@@ -1,0 +1,50 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body{
+display:flex;
+justify-content:center;
+align-items:flex-start;
+padding-top:100px;
+background:hsl(0, 0%, 100%);
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+fieldset{
+width:500px;
+padding:40px;
+border:4px solid black;
+border-radius:12px;
+}
+
+legend{
+font-weight:bold;
+padding:0 10px;
+}
+
+input{
+width:250px;
+height:30px;
+margin-top:5px;
+margin-bottom:15px;
+}
+
+
+label {
+    font-weight: bold;   
+}
+
+input {
+    width: 100%; 
+    height: 40px;
+    border-radius: 5px; 
+    
+}
