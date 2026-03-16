@@ -4,33 +4,21 @@
 <head>
 <title>Product Management Page</title>
 <link rel="stylesheet" href="C:\Users\Mypc\OneDrive - American International University-Bangladesh\WT\WTechSpring_25-26\Lab Performance_MID\Design\Style.css">
-
+<script src="C:\Users\Mypc\OneDrive - American International University-Bangladesh\WT\WTechSpring_25-26\Lab Performance_MID\JS\Validation.js"></script>
 </head>
     <body>
         <form>
             <fieldset>
                 <legend>
                     <h2>Product Management Page</h2></legend>
-                      <table>
-                        <tr>
-                            <td>
-                                <label>Unit Price:</label><br>
-                                <input type="number">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label>Quantity per day:</label><br>
-                                <input type="number">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label>Total Price for 30 Days:</label><br>
-                                <input type="number">
-                            </td>
-                        </tr>
-                      </table>
+
+                        <label for="unitPrice">Unit Price:</label><br>
+                        <input type="number" id="quantity" min="0" value="0">
+                        <label for="quantity">Quantity per Day:</label><br>
+                        <input type="number" id="quantity" placeholder="Enter quantity per day">
+
+                        <label for="totalPrice">Total Price for 30 Days:</label>
+                        <input type="number" id="totalPrice" readonly value="0">
                 
             </fieldset>
         </form>
