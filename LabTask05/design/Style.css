@@ -13,3 +13,26 @@ header{
 .container{
     margin-top:40px;
 }
+
+fieldset{
+    width:300px;
+    margin:0 auto;
+    padding:20px;
+    border:2px solid black;
+}
+
+legend{
+    font-weight:bold;
+    text-align:left;
+}
+
+textarea{
+    width:200px;
+    padding:5px;
+}
+
+button{
+    padding:8px;
+}
+
+
