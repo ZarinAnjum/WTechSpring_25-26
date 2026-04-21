@@ -16,7 +16,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
     $website = $_POST["website"];
     $comment = $_POST["comment"];
 
-    // use isset for radio button
     if(isset($_POST["gender"]))
     {
         $gender = $_POST["gender"];

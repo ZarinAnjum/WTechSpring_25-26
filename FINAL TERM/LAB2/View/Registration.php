@@ -7,7 +7,8 @@ include "../controller/RegistrationValidation.php";
         <title> Registration Log In Form</title>
     </head>
     <body>
-        <form method="post" action="">
+        
+        <form method="post" action="../view/welcome.php" target="_blank">
             <table>
                 <tr>
                     <td><p style = 'color: red '> * required field </p></td><br>
