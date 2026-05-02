@@ -46,12 +46,12 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
         $isValid = false;
     }
 
-    if(!empty($website) && preg_match("/^(https?:\/\/)?[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/", $website)){
-        
-    } else {
-        echo"Website is not valid <br>";
-        $isValid = false;
+if (!empty($website)) {
+    if (!preg_match("/^(https?:\/\/)?(www\.)?[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(\/\S*)?$/", $website)) {
+        $errors[] = "Website URL is not valid.";
+        $isValid  = false;
     }
+}
 
     if(!empty($comment)){
         
@@ -67,62 +67,101 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
         $isValid = false;
     }
 
-    
-    if($isValid){ 
-        $_SESSION["name"] = $name;
-        setcookie("name", $name, time()+3600, "/");
+    if (!$isValid) {
+    foreach ($errors as $error) {
+        echo $error . "<br>";
+    }
+    exit(); 
+}
 
-        $formdata = array(
-            "UserID"=>$userid,
-            "Name"=>$name,
-            "Email"=>$email,
-            "Website"=>$website,
-            "Comment"=>$comment,
-            "Gender"=>$gender
-        );
+$formdata = [
+    "UserID"  => $userid,
+    "Name"    => $name,
+    "Email"   => $email,
+    "Website" => $website,
+    "Comment" => $comment,
+    "Gender"  => $gender
+];
 
-        if(file_exists($datafile)){
-            $existdata = file_get_contents($datafile);
-            $tempdata = json_decode($existdata, true);
-        } else {
-            $tempdata = array();
-        }
+$tempdata = [];
+if (file_exists($datafile)) {
+    $existing = file_get_contents($datafile);
+    $decoded  = json_decode($existing, true);
+    if (is_array($decoded)) {
+        $tempdata = $decoded;
+    }
+}
+$tempdata[] = $formdata;
+file_put_contents($datafile, json_encode($tempdata, JSON_PRETTY_PRINT));
 
-        if(!is_array($tempdata)){
-            $tempdata = array();
-        }
+$database   = new db();
+$connection = $database->connection();
+$result     = $database->signin($connection, "user", $userid, $name);
 
-        $tempdata[] = $formdata;
+if ($result) {
+    $_SESSION["name"] = $name;
+    setcookie("name", $name, time() + 3600, "/");
+    header("Location: ../View/login.php");
+    exit();
+} else {
+    echo "Login failed. User not found. Please register first.";
+    exit();
+}
+    // if($isValid){ 
+    //     $_SESSION["name"] = $name;
+    //     setcookie("name", $name, time()+3600, "/");
 
-        $jsondata = json_encode($tempdata, JSON_PRETTY_PRINT);
-         if(file_put_contents($datafile,$jsondata)!==false)
-                    {
-                        echo "Data Saved Successfully <br>";
-                    }
-                    else{
-                        echo "No Data Saved";
-                    }
-            $database = new db();
-            $connection = $database->connection();
-            $result = $database->signin($connection,"user", $userid, $name, $email, $website, $comment, $gender);
-            if($result)
-                {
-                    Header("Location:../View/Dashboard.php ");
-                }
+    //     $formdata = array(
+    //         "UserID"=>$userid,
+    //         "Name"=>$name,
+    //         "Email"=>$email,
+    //         "Website"=>$website,
+    //         "Comment"=>$comment,
+    //         "Gender"=>$gender
+    //     );
+
+    //     if(file_exists($datafile)){
+    //         $existdata = file_get_contents($datafile);
+    //         $tempdata = json_decode($existdata, true);
+    //     } else {
+    //         $tempdata = array();
+    //     }
+
+    //     if(!is_array($tempdata)){
+    //         $tempdata = array();
+    //     }
+
+    //     $tempdata[] = $formdata;
+
+    //     $jsondata = json_encode($tempdata, JSON_PRETTY_PRINT);
+    //      if(file_put_contents($datafile,$jsondata)!==false)
+    //                 {
+    //                     echo "Data Saved Successfully <br>";
+    //                 }
+    //                 else{
+    //                     echo "No Data Saved";
+    //                 }
+    //         $database = new db();
+    //         $connection = $database->connection();
+    //         $result = $database->signin($connection,"user", $userid, $name, $email, $website, $comment, $gender);
+    //         if($result)
+    //             {
+    //                 Header("Location:../View/Dashboard.php ");
+    //             }
 
        
-            }
-            else{
-                echo "Please Use the appropiate validation";
-            }
+    //         }
+    //         else {  
+    //             echo "Please Use the appropiate validation";
+    //         }
 
-    if(isset($_SESSION["name"]) || isset($_COOKIE["name"]))
-    {
-        echo "Welcome Back";
-    }
-    else{
-        echo "Please log in agian!"; 
-    }
+    // if(isset($_SESSION["name"]) || isset($_COOKIE["name"]))
+    // {
+    //     echo "Welcome Back";
+    // }
+    // else{
+    //     echo "Please log in agian!"; 
+    // }
 
     }
 ?>
