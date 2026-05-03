@@ -1,38 +1,30 @@
 [
     {
-        "Name": "Rion Khan",
-        "Email": "rion801@gmail.com",
-        "Website": "https:\/\/www.GGS.com",
-        "Comment": "gg",
-        "Gender": "Male"
+        "Name": "Zarin",
+        "Password": "1234"
     },
     {
-        "Name": "Rion Khan",
-        "Email": "rion801@gmail.com",
-        "Website": "https:\/\/www.GGS.com",
-        "Comment": "ghj",
-        "Gender": "Male"
+        "Name": "Zarin",
+        "Password": "1234"
     },
     {
-        "Name": "Rion Khan",
-        "Email": "rion801@gmail.com",
-        "Website": "https:\/\/www.GGS.com",
-        "Comment": "ghj",
-        "Gender": "Male"
+        "name": "Zarin",
+        "password": "1234"
     },
     {
-        "Name": "Rion Khan",
-        "Email": "rion801@gmail.com",
-        "Website": "https:\/\/www.GGS.com",
-        "Comment": "ghj",
-        "Gender": "Male"
+        "Name": "mikasa",
+        "Password": "4567"
     },
     {
-        "Name": "MD Foize khan RION",
-        "password": "1234567",
-        "Email": "rion801@gmail.com",
-        "Website": "https:\/\/www.gg.com",
-        "Comment": "gg",
-        "Gender": "Male"
+        "name": "mikasa",
+        "password": "4567"
+    },
+    {
+        "name": "mikasa",
+        "password": "4567"
+    },
+    {
+        "name": "mikasa",
+        "password": "4567"
     }
 ]

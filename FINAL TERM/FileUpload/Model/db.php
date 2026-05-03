@@ -18,7 +18,7 @@ return $connection;
 
 function signup($connection, $tablename, $username, $password, $filepath)
 {
-    $sql= "INSERT INTO " .$tablename. "(username, password, filepath) VALUES ('".$username."', '".$password."','".$filepath."')";
+    $sql= "INSERT INTO " .$tablename. " (username, password, filepath) VALUES ('".$username."', '".$password."','".$filepath."')";
     $result = $connection->query($sql);
     return $result;
 }

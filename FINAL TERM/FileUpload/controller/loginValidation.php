@@ -43,7 +43,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
                     }
             $database = new db();
             $connection = $database->connection();
-            $result = $database->signin($connection,"users", $name, $password);
+            $result = $database->signin($connection,"names", $name, $password);
             
             if($result)
                 {
